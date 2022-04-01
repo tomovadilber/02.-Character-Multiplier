@@ -1,0 +1,58 @@
+using System;
+using System.Linq;
+using System.Numerics;
+using System.Text;
+using System.Collections.Generic;
+using System.Collections;
+
+
+namespace AssociativeArrays
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            List<string> names = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries).ToList();
+
+
+            int sum = 0;
+
+
+
+            string first = names[0];
+            string second = names[1];
+
+            if (first.Length>= second.Length)
+            {
+
+            }
+            else
+            {
+                first = names[1];
+                second = names[0];
+            }
+
+            for (int i = 0; i < second.Length; i++)
+            {
+                char one = first[i];
+                char two = second[i];
+
+                sum += one * two;
+
+            }
+
+            if (first.Length > second.Length)
+            {
+                for (int i = second.Length; i < first.Length; i++) 
+                {
+                    sum += first[i];
+                }
+            }
+
+            Console.WriteLine(sum);
+
+        }
+    }
+}
